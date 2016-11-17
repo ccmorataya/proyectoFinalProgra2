@@ -2,6 +2,9 @@ package com.finalProject.progra2;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +15,11 @@ public class Main {
     public static void main(String[] args) {
         try {
 
-            List<Usuario> usuarios = new ArrayList<Usuario>();
+            List<Usuario> usuarios = new ArrayList<>();
 
-            CsvReader usuarios_import = new CsvReader("C:\\Users\\LuisF\\Desktop\\pruevaarray/usuarios_import.csv");
+            Path filePath = Paths.get(System.getProperty("user.dir") + "/usuarios_import.csv");
+            System.out.println(filePath);
+            CsvReader usuarios_import = new CsvReader(filePath.toString());
             usuarios_import.readHeaders();
 
             while (usuarios_import.readRecord())
@@ -35,8 +40,6 @@ public class Main {
                         + us.getAlumno() + " - " + us.getNota());
             }
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
