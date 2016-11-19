@@ -55,10 +55,13 @@ public class Main {
                 Menu.find();
 
                 i = Integer.parseInt(scann.nextLine());
+                String fragment;
 
                 if (i == 1){
-                    System.out.println("Search all words\n");
-                    Busqueda.todasLasPalabras();
+                    System.out.println("Ingresa el nombre a buscar\n");
+//                    System.out.println("Search all words\n");
+                    fragment = scann.nextLine();
+                    Busqueda.todasLasPalabras(usuarios, fragment);
                 }
                 else if (i == 2){
                     System.out.println("Search any word\n");
