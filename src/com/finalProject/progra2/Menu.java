@@ -2,7 +2,7 @@ package com.finalProject.progra2;
 
 class Menu {
     static void show(){
-        System.out.println("Manejador de Notas de alumnos con archivos CSV");
+        System.out.println("\nManejador de Notas de alumnos con archivos CSV");
         System.out.println("Ingresa la opcion que deseas:");
         System.out.println("1. Cargar Archivos");
         System.out.println("2. Buscar Archivos\n");

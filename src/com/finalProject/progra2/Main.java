@@ -26,7 +26,6 @@ public class Main {
             if (i == 1) {
                 try {
                     Path filePath = Paths.get(System.getProperty("user.dir") + "/usuarios_import.csv");
-                    System.out.println(filePath);
                     CsvReader usuarios_import = new CsvReader(filePath.toString());
                     usuarios_import.readHeaders();
 
@@ -41,15 +40,16 @@ public class Main {
 
                     usuarios_import.close();
 
-//                for (Usuario us : usuarios) {
-//
-//                    System.out.println(us.getCurso() + " : " + us.getCarne() + " - "
-//                            + us.getAlumno() + " - " + us.getNota());
-//                }
+                    System.out.println("\nDatos cargados exitosamente, la información ingresada es:\n");
 
+                    for (Usuario us : usuarios) {
+                        System.out.println(us.getCurso() + " : " + us.getCarne() + " - "
+                            + us.getAlumno() + " - " + us.getNota());
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                System.out.println();
             }
             else if (i == 2){
                 Menu.find();
@@ -58,9 +58,11 @@ public class Main {
 
                 if (i == 1){
                     System.out.println("Search all words\n");
+                    Busqueda.todasLasPalabras();
                 }
                 else if (i == 2){
                     System.out.println("Search any word\n");
+                    Busqueda.cualquierPalabra();
                 }
             }
             else if (i == 0){
