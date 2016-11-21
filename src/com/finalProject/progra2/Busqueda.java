@@ -9,18 +9,28 @@ class Busqueda {
     private static String searchHeader = "Se encontraron las siguientes coincidencias: ";
 
     static void todasLasPalabras(List<String> clonedUsuarios, String fragment){
+        System.out.println(searchHeader);
         List <String> listClone = new ArrayList<String>();
-        String matchString = "(.*)"+ fragment +"(.*)";
-//        String matchString = "(?i)("+ fragment +").*";
+        String[] splited = fragment.split("\\s+");
+        StringBuilder matchString = new StringBuilder();
+        matchString.append("(.*)");
+
+        for (String aSplited : splited){
+            matchString.append(aSplited);
+            matchString.append("(.*)");
+        }
 
         for (String string : clonedUsuarios) {
-            if(string.matches(matchString)){
+            if(string.matches(matchString.toString())){
                 listClone.add(string);
             }
         }
-        System.out.println(listClone);
+
+        for (String string : listClone) {
+            System.out.println(string);
+        }
     }
-    static void cualquierPalabra(){
+    static void cualquierPalabra(List<String> clonedUsuarios, String fragment){
         System.out.println(searchHeader);
     }
 

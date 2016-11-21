@@ -11,6 +11,6 @@ class Menu {
 
     static void find(){
         System.out.println("1. Busqueda por todas las palabras ingresadas");
-        System.out.println("2. Busqueda por cualquier palabra ingresada");
+        System.out.println("2. Busqueda por cualquier palabra ingresada\n");
     }
 }
