@@ -18,6 +18,7 @@ public class Main {
         Scanner scann = new Scanner(System.in);
         int i = 0;
         List<Usuario> usuarios = new ArrayList<>();
+        List<String> clone = new ArrayList<>();
 
         while(isAlive) {
             Menu.show();
@@ -43,8 +44,8 @@ public class Main {
                     System.out.println("\nDatos cargados exitosamente, la información ingresada es:\n");
 
                     for (Usuario us : usuarios) {
-                        System.out.println(us.getCurso() + " : " + us.getCarne() + " - "
-                            + us.getAlumno() + " - " + us.getNota());
+                        clone.add(us.getCurso() + " : " + us.getCarne() + " - " + us.getAlumno() + " - " + us.getNota());
+                        System.out.println(us.getCurso() + " : " + us.getCarne() + " - " + us.getAlumno() + " - " + us.getNota());
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -61,7 +62,7 @@ public class Main {
                     System.out.println("Ingresa el nombre a buscar\n");
 //                    System.out.println("Search all words\n");
                     fragment = scann.nextLine();
-                    Busqueda.todasLasPalabras(usuarios, fragment);
+                    Busqueda.todasLasPalabras(clone, fragment);
                 }
                 else if (i == 2){
                     System.out.println("Search any word\n");
