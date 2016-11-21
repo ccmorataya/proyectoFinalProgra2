@@ -60,13 +60,13 @@ public class Main {
 
                 if (i == 1){
                     System.out.println("Ingresa el nombre a buscar\n");
-//                    System.out.println("Search all words\n");
                     fragment = scann.nextLine();
                     Busqueda.todasLasPalabras(clone, fragment);
                 }
                 else if (i == 2){
                     System.out.println("Search any word\n");
-                    Busqueda.cualquierPalabra();
+                    fragment = scann.nextLine();
+                    Busqueda.cualquierPalabra(clone, fragment);
                 }
             }
             else if (i == 0){
